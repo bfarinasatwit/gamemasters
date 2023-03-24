@@ -11,8 +11,8 @@ appid, name, developer, publisher, genre, isfree
 901583, 'Grand Theft Auto IV: Complete Edition', 'Rockstar 0rth', 'Rockstar Games', 'Open World', 'Action', 0
 1091500, 'Cyberpunk 2077', 'CD Projekt Red', 'CD Projekt Red', 'Open World', 'RPG', 0
 1097150, 'Fall Guys', 'Mediatonic', 'Mediatonic', 'Casual', 'Sports', 1
-242760, The Forest, Endnight Games Ltd, Endnight Games Ltd, Survival, Simulation, 0
-346110, ARK: Survival Evolved, Studio Wildcard, Studio Wildcard, Survival, MMO, 0
-1468810, 鬼谷八荒 Tale of Immortal, 鬼谷工作室, 鬼谷工作室, Adventure, RPG, 0
-444090, Paladins, Evil Mojo Games, Hi-Rez Studios, Action, PvP, 1
-291480, Warface, MY.GAMES, MY.GAMES, FPS, MMO, 1
+242760, 'The Forest', 'Endnight Games Ltd', 'Endnight Games Ltd', 'Survival', 'Simulation', 0
+346110, 'ARK: Survival Evolved', 'Studio Wildcard', 'Studio Wildcard', 'Survival', 'MMO', 0
+1468810, '鬼谷八荒 Tale of Immortal', '鬼谷工作室', '鬼谷工作室', 'Adventure', 'RPG', 0
+444090, 'Paladins', 'Evil Mojo Games', 'Hi-Rez Studios', 'Action', 'PvP', 1
+291480, 'Warface', 'MY.GAMES', 'MY.GAMES', 'FPS', 'MMO', 1
