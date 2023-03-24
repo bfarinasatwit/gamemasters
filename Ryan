@@ -16,4 +16,4 @@ VALUES (340, 'Half-Life 2: Lost Coast', 'Valve', 'Valve', 'Action', 'FPS', 0),
 (346110, 'ARK: Survival Evolved', 'Studio Wildcard', 'Studio Wildcard', 'Survival', 'MMO', 0),
 (1468810, '鬼谷八荒 Tale of Immortal', '鬼谷工作室', '鬼谷工作室', 'Adventure', 'RPG', 0),
 (444090, 'Paladins', 'Evil Mojo Games', 'Hi-Rez Studios', 'Action', 'PvP', 1),
-(291480, 'Warface', 'MY.GAMES', 'MY.GAMES', 'FPS', 'MMO', 1)
+(291480, 'Warface', 'MY.GAMES', 'MY.GAMES', 'FPS', 'MMO', 1);
