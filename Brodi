@@ -1,4 +1,5 @@
 App id, Game name, developer, publisher, genre1, genre2, free?
+
 570, 'Dota 2','Valve', 'Valve', 'Action', 'Strategy', 1
 730, 'Counter Strike: Global Offensive', 'Valve', 'Valve', 'Action', 'FPS', 1
 1172470, 'Apex Legends', 'Respawn Entertainment', 'Electronic Arts', 'Action', 'Adventure', 1
