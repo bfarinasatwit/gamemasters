@@ -1,17 +1,18 @@
-570
-730
-1172470
-578080
-1063730
-440
-271590
-1599340
-550
-304930
-252490
-230410
-105600
-4000
-1245620
-291550
-236390
+App id, Game name, developer, publisher, genre1, genre2, free?
+570, Dota 2, Valve, Valve, Action, Strategy, Yes
+730, Counter Strike: Global Offensive, Valve, Valve, Action, FPS, Yes
+1172470, Apex Legends, Respawn Entertainment, Electronic Arts, Action, Adventure, Yes
+578080, PUBG: BATTLEGROUNDS, KRAFTON Inc., KRAFTON Inc., Action, Adventure, Yes
+1063730, New World, Amazon Games, Amazon Games, Action, Massively Multiplayer, No
+440, Team Fortress 2, Valve, Valve, Action, FPS, Yes
+271590, Grand Theft Auto 5, Rockstar North, Rockstar Games, Action, Open World, No
+1599340, Lost Ark, Smilegate RPG, Amazon Games, Action, Massively Multiplayer, Yes
+550, Left 4 Dead 2, Valve, Valve, Online Co-op, Zombie, No
+304930, Unturned, Smartly Dressed Games, Smartly Dressed Games, Multiplayer, Zombie, No
+252490, Rust, Facepunch Studios, Facepunch Studios, Action, RPG, No
+230410, Warframe, Digital Extremes, Digital Extremes, Co-op, Third Person Shooter, Yes
+105600, Terraria, Re-logic, Re-Logic, Action, Side Scroller, No
+4000, Garry's Mod, Facepunch Studios, Valve, Indie, Simulation, No
+1245620, Elden Ring, FromSoftware Inc., Bandai Namco, Souls Like, RPG, No
+291550, Brawlhalla, Blue Mammoth Games, Ubisoft, Action, Indie, Yes
+236390, War Thunder, Gaijin Entertainment, Gaijin Distribution KFT, Action, Simulation, Yes
