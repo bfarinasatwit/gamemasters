@@ -1,18 +1,18 @@
 appid, name, developer, publisher, genre, isfree
 
-340, Half-Life 2: Lost Coast, Valve, Valve, Action, FPS, no
-945360, Among Us, Innersloth, Innersloth, Casual, Horror, no
-1085660, Destiny 2, Bungie, Bungie, Action, Adventure, yes
-755790, Ring of Elysium, Aurora Studio, TCH Scarlet Limited, Multiplayer, PvP, yes
-359550, Tom Clancy's Rainbow Six Siege, Ubisoft Montreal, Ubisoft, Action, FPS, no
-238960, Path of Exile, Grinding Gear Games, Grinding Gear Games, Action, RPG, yes
-218620, Payday 2, OVERKILL - a Starbreeze Studio., Starbreeze Publishing AB, Action, RPG, no
-892970, Valheim, Iron Gate AB, Coffee Stain Publishing, Adventure, RPG, no
-901583, Grand Theft Auto IV: Complete Edition, Rockstar North, Rockstar Games, Open World, Action, no
-1091500, Cyberpunk 2077, CD Projekt Red, CD Projekt Red, Open World, RPG, no
-1097150, Fall Guys, Mediatonic, Mediatonic, Casual, Sports, yes (on Epic, idk how we handle this)
-242760, The Forest, Endnight Games Ltd, Endnight Games Ltd, Survival, Simulation, no
-346110, ARK: Survival Evolved, Studio Wildcard, Studio Wildcard, Survival, MMO, no
-1468810, 鬼谷八荒 Tale of Immortal, 鬼谷工作室, 鬼谷工作室, Adventure, RPG, no
-444090, Paladins, Evil Mojo Games, Hi-Rez Studios, Action, PvP, yes
-291480, Warface, MY.GAMES, MY.GAMES, FPS, MMO, yes
+340, 'Half-Life 2: Lost Coast', 'Valve', 'Valve', 'Action', 'FPS', 0
+945360, 'Among Us', 'Innersloth', 'Innersloth', 'Casual', 'Horror', 0
+1085660, 'Destiny 2', 'Bungie', 'Bungie', 'Action', 'Adventure', 1
+755790, 'Ring of Elysium', 'Aurora Studio', 'TCH Scarlet Limited', 'Multiplayer', 'PvP', 1
+359550, 'Tom Clancy's Rainbow Six Siege', 'Ubisoft Montreal', 'Ubisoft', 'Action', 'FPS', 0
+238960, 'Path of Exile', 'Grinding Gear Games', 'Grinding Gear Games', 'Action', 'RPG', 1
+218620, 'Payday 2', 'OVERKILL - a Starbreeze Studio.', 'Starbreeze Publishing AB', 'Action', 'RPG', 0
+892970, 'Valheim', 'Iron Gate AB', 'Coffee Stain Publishing', 'Adventure', 'RPG', 0
+901583, 'Grand Theft Auto IV: Complete Edition', 'Rockstar 0rth', 'Rockstar Games', 'Open World', 'Action', 0
+1091500, 'Cyberpunk 2077', 'CD Projekt Red', 'CD Projekt Red', 'Open World', 'RPG', 0
+1097150, 'Fall Guys', 'Mediatonic', 'Mediatonic', 'Casual', 'Sports', 1
+242760, The Forest, Endnight Games Ltd, Endnight Games Ltd, Survival, Simulation, 0
+346110, ARK: Survival Evolved, Studio Wildcard, Studio Wildcard, Survival, MMO, 0
+1468810, 鬼谷八荒 Tale of Immortal, 鬼谷工作室, 鬼谷工作室, Adventure, RPG, 0
+444090, Paladins, Evil Mojo Games, Hi-Rez Studios, Action, PvP, 1
+291480, Warface, MY.GAMES, MY.GAMES, FPS, MMO, 1
