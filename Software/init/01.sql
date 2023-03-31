@@ -18,7 +18,7 @@ values (570, 'Dota 2','Valve', 'Valve', 'MOBA', 'Strategy', 1) , (730, 'Counter 
 (304930, 'Unturned', 'Smartly Dressed Games', 'Smartly Dressed Games', 'Multiplayer', 'Zombie', 1),
 (252490, 'Rust', 'Facepunch Studios', 'Facepunch Studios', 'Action', 'RPG', 0),
 (230410, 'Warframe', 'Digital Extremes', 'Digital Extremes', 'Multiplayer', 'Action', 1),
-(105600, 'Terraria', 'Re-logic', 'Re-Logic', 'Action', 'Side Scroller', 0),
+(105600, 'Terraria', 'Re-logic', 'Re-Logic', 'Action', 'Simulation', 0),
 (4000, 'Garry''s Mod', 'Facepunch Studios', 'Valve', 'Indie', 'Simulation', 0),
 (1245620, 'Elden Ring', 'FromSoftware Inc.', 'Bandai Namco', 'Open World', 'RPG', 0),
 (291550, 'Brawlhalla', 'Blue Mammoth Games', 'Ubisoft', 'Action', 'Indie', 1),
