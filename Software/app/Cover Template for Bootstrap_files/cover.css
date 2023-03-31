@@ -131,3 +131,42 @@ h3{
 p{
   font-size: larger;
 }
+
+input[type="submit"],
+input[type="reset"]{
+  color: #333;
+  width: 250px;
+  height: 70px;
+  font-size: 30px;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-image: linear-gradient(to right, #75b022,#588a1b);
+  color: #d2efa9;
+  text-shadow: 0 .25em 0.5em rgba(0,0,0,10000) !important;
+  border: .05rem solid #fff;
+  border-radius: 5px;
+  margin-top: 3rem;
+}
+
+input[type="submit"]{
+  margin-left: 10%;
+}
+
+fieldset h4{
+  margin-top: 3rem;
+}
+
+legend{
+  text-align: center;
+  font-weight: 600;
+  font-size: 45px;
+}
+
+#survey{
+  margin-top: 4rem;
+}
+
+#backtomain{
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+}

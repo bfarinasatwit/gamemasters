@@ -16,6 +16,36 @@
   <link href="Cover%20Template%20for%20Bootstrap_files/cover.css" rel="stylesheet">
 </head>
 <body>
-    hello
+        <!-- will change action later-->
+    <form method="get" action="http://www.randyconnolly.com/tests/process.php" id="survey">
+        <fieldset>
+            <legend>What are you looking to play?</legend>
+            <h4>Genres: </h4>
+            <input type="checkbox" name="rpg" value="1" />
+            <label for="rpg" class="genre">RPG</label><br>
+            <input type="checkbox" name="fps" value="1" />
+            <label for="fps" class="genre">FPS</label><br>
+            <input type="checkbox" name="adventure" value="1" />
+            <label for="adventure">Adventure</label><br>
+            <input type="checkbox" name="horror" value="1" />
+            <label for="horror" class="genre">Horror</label>
+
+            <h4>Cost:</h4>
+            <input type="radio" id="free" name="cost" value="0">
+            <label for="free">Free</label>
+            <br>
+            <input type="radio" id="paid" name="cost" value="1">
+            <label for="paid">Paid</label>
+            <br>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Clear">
+
+            <a href="./Cover_Template_for_Bootstrap (2).htm" id="backtomain">Return to Main Page</a>
+            
+        </fieldset>
+    </form>
+
+
 </body>
 </html>
