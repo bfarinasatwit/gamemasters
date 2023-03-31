@@ -17,7 +17,7 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: Collectbiles4US
+      MYSQL_DATABASE: GameMasters
       MYSQL_PASSWORD: password
     networks:
       - mysql-phpmyadmin

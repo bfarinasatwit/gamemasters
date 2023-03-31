@@ -1,11 +1,12 @@
 CREATE TABLE games(
-    appId int NOT NULL AUTO_INCREMENT,
+    appId int NOT NULL,
     game varchar(255) NOT NULL,
     Developer varchar(255) NOT NULL,
     Publisher varchar(255) NOT NULL,
     genre1 varchar(255) NOT NULL,
     genre2 varchar(255) NOT NULL,
-    is_free NUMBER(1)
+    is_free BIT,
+    PRIMARY KEY (appId)
 );
 
 INSERT INTO games (appId, game, Developer, Publisher, genre1,genre2,is_free)
@@ -25,7 +26,7 @@ values (570, 'Dota 2','Valve', 'Valve', 'Action', 'Strategy', 1) , (730, 'Counte
 
 INSERT INTO games (appId, game, Developer, Publisher, genre1,genre2,is_free)
 VALUES (340, 'Half-Life 2: Lost Coast', 'Valve', 'Valve', 'Action', 'FPS', 0),
-(945360, 'Among Us', 'Innersloth', 'Innersloth', 'Casual', 'Horror', 0)
+(945360, 'Among Us', 'Innersloth', 'Innersloth', 'Casual', 'Horror', 0),
 (1085660, 'Destiny 2', 'Bungie', 'Bungie', 'Action', 'Adventure', 1),
 (755790, 'Ring of Elysium', 'Aurora Studio', 'TCH Scarlet Limited', 'Multiplayer', 'PvP', 1),
 (359550, 'Tom Clancy''s Rainbow Six Siege', 'Ubisoft Montreal', 'Ubisoft', 'Action', 'FPS', 0),
@@ -37,7 +38,7 @@ VALUES (340, 'Half-Life 2: Lost Coast', 'Valve', 'Valve', 'Action', 'FPS', 0),
 (1097150, 'Fall Guys', 'Mediatonic', 'Mediatonic', 'Casual', 'Sports', 1),
 (242760, 'The Forest', 'Endnight Games Ltd', 'Endnight Games Ltd', 'Survival', 'Simulation', 0),
 (346110, 'ARK: Survival Evolved', 'Studio Wildcard', 'Studio Wildcard', 'Survival', 'MMO', 0),
-(1468810, '鬼谷八荒 Tale of Immortal', '鬼谷工作室', '鬼谷工作室', 'Adventure', 'RPG', 0),
+(2050650, 'Resident Evil 4', 'CAPCOM Co., Ltd.', 'CAPCOM Co., Ltd.', 'Action', 'Horror', 0),
 (444090, 'Paladins', 'Evil Mojo Games', 'Hi-Rez Studios', 'Action', 'PvP', 1),
 (291480, 'Warface', 'MY.GAMES', 'MY.GAMES', 'FPS', 'MMO', 1);
 
