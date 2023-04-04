@@ -162,11 +162,14 @@ legend{
 }
 
 #survey{
-  margin-top: 4rem;
+  margin-top:0.5rem;
 }
 
 #backtomain{
   display: block;
   text-align: center;
   margin-top: 2rem;
+}
+#genretable td{
+  text-align: center;
 }

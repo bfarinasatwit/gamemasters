@@ -17,24 +17,93 @@
 </head>
 <body>
         <!-- will change action later-->
-    <form method="get" action="http://www.randyconnolly.com/tests/process.php" id="survey">
+    <form method="post" action="output.php" id="survey">
         <fieldset>
             <legend>What are you looking to play?</legend>
-            <h4>Genres: </h4>
-            <input type="checkbox" name="rpg" value="1" />
-            <label for="rpg" class="genre">RPG</label><br>
-            <input type="checkbox" name="fps" value="1" />
-            <label for="fps" class="genre">FPS</label><br>
-            <input type="checkbox" name="adventure" value="1" />
-            <label for="adventure">Adventure</label><br>
-            <input type="checkbox" name="horror" value="1" />
-            <label for="horror" class="genre">Horror</label>
+            <h4>Select Up To Two Genres: </h4>
+            <table id="genretable">
+                <tr>
+                    <td><input type="radio" name="genre1" value="Action" required/></td>
+                    <td><label for="genre1" class="genre">Action</label></td>
+                    <td><input type="radio" name="genre2" value="Action" required/></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="genre1" value="Adventure" /></td>
+                    <td><label for="genre1" class="genre">Adventure</label></td>
+                    <td><input type="radio" name="genre2" value="Adventure" /></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="genre1" value="Casual" /></td>
+                    <td><label for="genre1" class="genre">Casual</label></td>
+                    <td><input type="radio" name="genre2" value="Casual" /></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="genre1" value="FPS" /></td>
+                    <td><label for="genre1" class="genre">FPS</label></td>
+                    <td><input type="radio" name="genre2" value="FPS" /></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="genre1" value="Horror" /></td>
+                    <td><label for="genre1" class="genre">Horror</label></td>
+                    <td><input type="radio" name="genre2" value="Horror" /></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="genre1" value="Indie" /></td>
+                    <td><label for="genre1" class="genre">Indie</label></td>
+                    <td><input type="radio" name="genre2" value="Indie" /></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="genre1" value="Multiplayer" /></td>
+                    <td><label for="genre1" class="genre">Multiplayer</label></td>
+                    <td><input type="radio" name="genre2" value="Multiplayer" /></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="genre1" value="MMO" /></td>
+                    <td><label for="genre1" class="genre">MMO</label></td>
+                    <td><input type="radio" name="genre2" value="MMO" /></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="genre1" value="MOBA" /></td>
+                    <td><label for="genre1" class="genre">MOBA</label></td>
+                    <td><input type="radio" name="genre2" value="MOBA" /></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="genre1" value="Open World" /></td>
+                    <td><label for="genre1" class="genre">Open World</label></td>
+                    <td><input type="radio" name="genre2" value="Open World" /></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="genre1" value="RPG" /></td>
+                    <td><label for="genre1" class="genre">RPG</label></td>
+                    <td><input type="radio" name="genre2" value="RPG" /></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="genre1" value="Simluation" /></td>
+                    <td><label for="genre1" class="genre">Simluation</label></td>
+                    <td><input type="radio" name="genre2" value="Simluation" /></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="genre1" value="Sports" /></td>
+                    <td><label for="genre1" class="genre">Sports</label></td>
+                    <td><input type="radio" name="genre2" value="Sports" /></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="genre1" value="Strategy" /></td>
+                    <td><label for="genre1" class="genre">Strategy</label></td>
+                    <td><input type="radio" name="genre2" value="Strategy" /></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="genre1" value="Zombie" /></td>
+                    <td><label for="genre1" class="genre">Zombie</label></td>
+                    <td><input type="radio" name="genre2" value="Zombie" /></td>
+                </tr>
+            </table>
 
             <h4>Cost:</h4>
-            <input type="radio" id="free" name="cost" value="0">
+            <input type="radio" id="free" name="is_free" value="1" required>
             <label for="free">Free</label>
             <br>
-            <input type="radio" id="paid" name="cost" value="1">
+            <input type="radio" id="paid" name="is_free" value="0">
             <label for="paid">Paid</label>
             <br>
 
