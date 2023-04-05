@@ -147,13 +147,13 @@ input[type="reset"]{
   margin-top: 3rem;
 }
 
-input[type="submit"]{
-  margin-left: 10%;
-}
+/* input[type="submit"]{
+  margin-top: 10%;
+} */
 
-fieldset h4{
+/* fieldset h4{
   margin-top: 3rem;
-}
+} */
 
 legend{
   text-align: center;
@@ -172,4 +172,17 @@ legend{
 }
 #genretable td{
   text-align: center;
+}
+#genretable{
+  display: inline;
+}
+#costtable{
+  display: inline;
+  margin-left: 10rem;
+}
+#survey{
+  width: 70%;
+}
+#costtable #move{
+  padding-bottom: 20rem;
 }
