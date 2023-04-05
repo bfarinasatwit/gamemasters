@@ -19,8 +19,7 @@ services:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: GameMasters
       MYSQL_PASSWORD: password
-    networks:
-      - mysql-phpmyadmin
+
 
   # phpmyadmin
   phpmyadmin:
@@ -33,10 +32,7 @@ services:
     environment:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: password
-    networks:
-      - mysql-phpmyadmin
+
 volumes:
   app:
   db_data:
-networks:
-  mysql-phpmyadmin:
