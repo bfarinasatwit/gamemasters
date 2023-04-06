@@ -197,7 +197,16 @@
         
     ?>
 
-    <img src="<?=$imagelink ?>" style="width:600px;height:100%;"/>
+    <?php
+    // assuming the variable $id contains the ID you want to check
+    if ($gameid == "901583") {
+    // display image for desired_id
+    echo '<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/12210/library_600x900.jpg" width="600px" height="100%">';
+    } else {
+    // display default image for all other IDs
+    echo '<img src="' . $imagelink . '" width="600px" height="100%">';
+    }
+    ?>
 
 
 </body>
