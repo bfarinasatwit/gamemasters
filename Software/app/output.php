@@ -88,10 +88,11 @@
                        if(count($_SESSION['results']) > $_SESSION['counter']){
                         $gameid=$_SESSION['results'][$_SESSION['counter']]["0"];
                         $gamelink= "https://store.steampowered.com/app/{$gameid}/";
+                        $gameid=$_SESSION['results'][$_SESSION['counter']]["0"];
+                        $gamelink= "https://store.steampowered.com/app/{$gameid}/";
+                        $imagelink= "https://cdn.cloudflare.steamstatic.com/steam/apps/{$gameid}/library_600x900.jpg";
                        }
-                       $gameid=$_SESSION['results'][$_SESSION['counter']]["0"];
-                       $gamelink= "https://store.steampowered.com/app/{$gameid}/";
-                       $imagelink= "https://cdn.cloudflare.steamstatic.com/steam/apps/{$gameid}/library_600x900.jpg";
+                       
                        
 
                        if(isset($_POST['reroll'])){
@@ -109,17 +110,14 @@
         </tr>
         <tr>
             <td>
-                <p>
-                    Developer: 
+                <p> 
                     <?php
                        if(isset($_POST['reroll'])){
                        if(count($_SESSION['results']) > $_SESSION['counter']){
-                          echo $_SESSION['results'][$_SESSION['counter']]["2"];
-                        }else{
-                            echo "You Have Reached The End!";
+                          echo "Developer: " . $_SESSION['results'][$_SESSION['counter']]["2"];
                         }
                         }else{
-                            echo $_SESSION['results']["0"]["2"];                
+                            echo  "Developer: " . $_SESSION['results']["0"]["2"];                
                         }
                     ?>
                 </p>
@@ -128,16 +126,13 @@
         <tr>
             <td>
                 <p>
-                    Publisher: 
                     <?php
                        if(isset($_POST['reroll'])){
                        if(count($_SESSION['results']) > $_SESSION['counter']){
-                          echo $_SESSION['results'][$_SESSION['counter']]["3"];
-                        }else{
-                            echo "You Have Reached The End!";
+                          echo  "Publisher: " . $_SESSION['results'][$_SESSION['counter']]["3"];
                         }
                         }else{
-                            echo $_SESSION['results']["0"]["3"];                
+                            echo "Publisher: " . $_SESSION['results']["0"]["3"];                
                         }
                     ?>
                 </p>
@@ -145,17 +140,14 @@
         </tr>
         <tr>
             <td>
-                <p>
-                    Genre 1: 
+                <p> 
                     <?php
                        if(isset($_POST['reroll'])){
                        if(count($_SESSION['results']) > $_SESSION['counter']){
-                          echo $_SESSION['results'][$_SESSION['counter']]["4"];
-                        }else{
-                            echo "You Have Reached The End!";
+                          echo "Genre 1: " . $_SESSION['results'][$_SESSION['counter']]["4"];
                         }
                         }else{
-                            echo $_SESSION['results']["0"]["4"];                
+                            echo "Genre 1: " . $_SESSION['results']["0"]["4"];                
                         }
                     ?>
                 </p>
@@ -163,17 +155,14 @@
         </tr>
         <tr>
             <td>
-                <p>
-                    Genre 2: 
+                <p> 
                     <?php
                        if(isset($_POST['reroll'])){
                        if(count($_SESSION['results']) > $_SESSION['counter']){
-                          echo $_SESSION['results'][$_SESSION['counter']]["5"]; 
-                        }else{
-                            echo "You Have Reached The End!";
+                          echo "Genre 2: " . $_SESSION['results'][$_SESSION['counter']]["5"]; 
                         }
                         }else{
-                            echo $_SESSION['results']["0"]["5"];             
+                            echo "Genre 2: " . $_SESSION['results']["0"]["5"];             
                         }
                     ?>
                 </p>
@@ -183,8 +172,13 @@
 
     <form method="post" id="update">
 
-        <input type="submit" name="reroll" value="Re-Roll"/>
-    
+        <?php
+            if(count($_SESSION['results']) > $_SESSION['counter']){
+                echo "<input type='submit' name='reroll' value='Re-Roll'/>";
+            }else{
+                echo "<a href='index.php' id='backtomain'>Return to Home Page</a>";
+            }
+        ?>
     </form>
     
 
@@ -197,13 +191,15 @@
     ?>
 
     <?php
-    // gta 4
-    if ($gameid == "901583") {
-    echo '<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/12210/library_600x900.jpg" width="600px" height="100%">';
-    } else {
-    // any other game
-    echo '<img src="' . $imagelink . '" width="600px" height="100%">';
-    }
+        if(count($_SESSION['results']) > $_SESSION['counter']){
+            // gta 4
+            if ($gameid == "901583") {
+             echo '<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/12210/library_600x900.jpg" width="600px" height="100%">';
+            } else {
+            // any other game
+             echo '<img src="' . $imagelink . '" width="600px" height="100%">';
+            }
+        }
     ?>
 
 
