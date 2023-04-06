@@ -205,9 +205,15 @@ session_start();
 
     <?php
     if (count($_SESSION['results']) > $_SESSION['counter']) {
-        echo "<a href={$gamelink}><input type='submit' name='redirect' value='Get Game'/></a>";
+        // Changes the links to the Epic Games Store for the two games that are now only available there.
+        if ($gameid == "1097150") {
+            $gamelink = "https://store.epicgames.com/en-US/p/fall-guys";
+        } else if ($gameid == "252950"){
+            $gamelink = "https://store.epicgames.com/en-US/p/rocket-league";
+        }
+            echo "<a href={$gamelink}><input type='submit' name='redirect' value='Get Game'/></a>";
+        
     }
-
     ?>
 
     <?php
