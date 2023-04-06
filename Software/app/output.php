@@ -170,8 +170,7 @@
                             echo "You Have Reached The End!";
                         }
                         }else{
-                            echo $_SESSION['results']["0"]["5"];  
-                            $_SESSION['counter']++;               
+                            echo $_SESSION['results']["0"]["5"];             
                         }
                     ?>
                 </p>
