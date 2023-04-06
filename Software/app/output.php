@@ -1,6 +1,5 @@
 <?php
     session_start();
-    $stylesheet_url = "style.css";
 ?>
 
 <!DOCTYPE html>
@@ -185,7 +184,6 @@
     <?php
         if(count($_SESSION['results']) > $_SESSION['counter']){
             echo "<a href={$gamelink}><input type='submit' name='redirect' value='Get Game'/></a>";
-            $_SESSION['counter']++;
         }
         
     ?>
@@ -199,6 +197,7 @@
             // any other game
              echo '<img src="' . $imagelink . '" width="600px" height="100%">';
             }
+            $_SESSION['counter']++;
         }
     ?>
 
