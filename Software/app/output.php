@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    $stylesheet_url = "style.css";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,19 +28,22 @@
 
     <!-- Create connection to db -->
     <?php
+
     $servername = "db";
     $username = "root";
     $password = "password";
     $dbname = "GameMasters";
 
     // Create connection
+    if(!isset($_POST['reroll'])){
+
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-    echo "Connected successfully";
+    //echo "Connected successfully";
 
     //obtain post data from html form
     $genre1 = $_POST["genre1"];
@@ -47,31 +55,138 @@
     $stmt->execute();
     $result = $stmt->get_result();
     
+    $_SESSION['results']=$result->fetch_all();
+    $_SESSION['counter']=0;
+    
     if (!$result) {
         die("Query failed: " . $conn->error);
     }
+    }
     ?>
 
-    <p>The value of genre1 is:
-        <?php echo $genre1; ?>
-    </p>
-    <p>The value of genre2 is:
-        <?php echo $genre2; ?>
-    </p>
-    <p>The value of is_free is:
-        <?php echo $is_free; ?>
-    </p>
-    <p>The result is
-        <?php
+    <!-- <p>The result is
+        //?php
         //loop through the result and display the desired information
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "Game: " . $row["game"] . ", Developer: " . $row["Developer"] . ", Publisher: " . $row["Publisher"] . ", Genre 1: " . $row["genre1"] . ", Genre 2: " . $row["genre2"] . ", Is Free: " . $row["is_free"] . "<br> <br>";
-            } 
-        } else {
-            echo "0 results";
-        } ?>
-    </p>
+        // if ($result->num_rows > 0) {
+        //     while ($row = $result->fetch_assoc()) {
+        //         echo "Game: " . $row["game"] . ", Developer: " . $row["Developer"] . ", Publisher: " . $row["Publisher"] . ", Genre 1: " . $row["genre1"] . ", Genre 2: " . $row["genre2"] . ", Is Free: " . $row["is_free"] . "<br> <br>";
+        //     } 
+        // } else {
+        //     echo "0 results";
+        // } ?>
+    </p> -->
+
+  
+
+    <table id="output">
+        <legend>You Rolled: </legend>
+        <tr>
+            <td>
+                <h4>
+                    <?php
+                       
+                       $gameid=$_SESSION['results'][$_SESSION['counter']]["0"];
+                       $gamelink= "https://store.steampowered.com/app/{$gameid}/";
+
+                       if(isset($_POST['reroll'])){
+                       if(count($_SESSION['results']) > $_SESSION['counter']){
+                          echo $_SESSION['results'][$_SESSION['counter']]["1"];
+                          $_SESSION['counter']++;
+                        }else{
+                            echo "You Have Reached The End!";
+                        }
+                        }else{
+                            echo $_SESSION['results']["0"]["1"];
+                            $_SESSION['counter']++;                
+                        }
+                    ?>
+                </h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Developer: 
+                    <?php
+                       if(isset($_POST['reroll'])){
+                       if(count($_SESSION['results']) > $_SESSION['counter']){
+                          echo $_SESSION['results'][$_SESSION['counter']]["2"];
+                        }else{
+                            echo "You Have Reached The End!";
+                        }
+                        }else{
+                            echo $_SESSION['results']["0"]["2"];                
+                        }
+                    ?>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Publisher: 
+                    <?php
+                       if(isset($_POST['reroll'])){
+                       if(count($_SESSION['results']) > $_SESSION['counter']){
+                          echo $_SESSION['results'][$_SESSION['counter']]["3"];
+                        }else{
+                            echo "You Have Reached The End!";
+                        }
+                        }else{
+                            echo $_SESSION['results']["0"]["3"];                
+                        }
+                    ?>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Genre 1: 
+                    <?php
+                       if(isset($_POST['reroll'])){
+                       if(count($_SESSION['results']) > $_SESSION['counter']){
+                          echo $_SESSION['results'][$_SESSION['counter']]["4"];
+                        }else{
+                            echo "You Have Reached The End!";
+                        }
+                        }else{
+                            echo $_SESSION['results']["0"]["4"];                
+                        }
+                    ?>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Genre 2: 
+                    <?php
+                       if(isset($_POST['reroll'])){
+                       if(count($_SESSION['results']) > $_SESSION['counter']){
+                          echo $_SESSION['results'][$_SESSION['counter']]["5"];
+                        }else{
+                            echo "You Have Reached The End!";
+                        }
+                        }else{
+                            echo $_SESSION['results']["0"]["5"];                
+                        }
+                    ?>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <form method="post" id="update">
+
+        <input type="submit" name="reroll" value="Re-Roll"/>
+    
+    </form>
+    
+
+    <?php
+        echo "<a href={$gamelink}><input type='submit' name='redirect' value='Get Game'/></a>";
+    ?>
 
 </body>
 
