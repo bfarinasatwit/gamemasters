@@ -85,19 +85,20 @@
                 <h4>
                     <?php
                        
-                       $gameid=$_SESSION['results'][$_SESSION['counter']]["0"];
-                       $gamelink= "https://store.steampowered.com/app/{$gameid}/";
+                       if(count($_SESSION['results']) > $_SESSION['counter']){
+                        $gameid=$_SESSION['results'][$_SESSION['counter']]["0"];
+                        $gamelink= "https://store.steampowered.com/app/{$gameid}/";
+                       }
+                       
 
                        if(isset($_POST['reroll'])){
                        if(count($_SESSION['results']) > $_SESSION['counter']){
                           echo $_SESSION['results'][$_SESSION['counter']]["1"];
-                          $_SESSION['counter']++;
                         }else{
                             echo "You Have Reached The End!";
                         }
                         }else{
-                            echo $_SESSION['results']["0"]["1"];
-                            $_SESSION['counter']++;                
+                            echo $_SESSION['results']["0"]["1"];               
                         }
                     ?>
                 </h4>
@@ -164,12 +165,13 @@
                     <?php
                        if(isset($_POST['reroll'])){
                        if(count($_SESSION['results']) > $_SESSION['counter']){
-                          echo $_SESSION['results'][$_SESSION['counter']]["5"];
+                          echo $_SESSION['results'][$_SESSION['counter']]["5"]; 
                         }else{
                             echo "You Have Reached The End!";
                         }
                         }else{
-                            echo $_SESSION['results']["0"]["5"];                
+                            echo $_SESSION['results']["0"]["5"];  
+                            $_SESSION['counter']++;               
                         }
                     ?>
                 </p>
@@ -185,7 +187,11 @@
     
 
     <?php
-        echo "<a href={$gamelink}><input type='submit' name='redirect' value='Get Game'/></a>";
+        if(count($_SESSION['results']) > $_SESSION['counter']){
+            echo "<a href={$gamelink}><input type='submit' name='redirect' value='Get Game'/></a>";
+            $_SESSION['counter']++;
+        }
+        
     ?>
 
 </body>
