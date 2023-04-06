@@ -50,7 +50,7 @@
     $genre2 = $_POST["genre2"];
     $is_free = strval($_POST["is_free"]);
     //perform query and store in result
-    $stmt = $conn->prepare("SELECT * FROM games WHERE (genre1=? OR genre2=?) AND (is_free=?) UNION DISTINCT SELECT * FROM games WHERE (genre1=? OR genre2=?) AND (is_free=?)");
+    $stmt = $conn->prepare("SELECT * FROM games WHERE (genre1=? OR genre2=?) AND (is_free=?) UNION DISTINCT SELECT * FROM games WHERE (genre1=? OR genre2=?) AND (is_free=?) order by RAND()");
     $stmt->bind_param("ssissi", $genre1, $genre1, $is_free, $genre2, $genre2, $is_free);
     $stmt->execute();
     $result = $stmt->get_result();
