@@ -89,6 +89,9 @@
                         $gameid=$_SESSION['results'][$_SESSION['counter']]["0"];
                         $gamelink= "https://store.steampowered.com/app/{$gameid}/";
                        }
+                       $gameid=$_SESSION['results'][$_SESSION['counter']]["0"];
+                       $gamelink= "https://store.steampowered.com/app/{$gameid}/";
+                       $imagelink= "https://cdn.cloudflare.steamstatic.com/steam/apps/{$gameid}/library_600x900.jpg";
                        
 
                        if(isset($_POST['reroll'])){
@@ -193,6 +196,9 @@
         }
         
     ?>
+
+    <img src="<?=$imagelink ?>" style="width:600px;height:100%;"/>
+
 
 </body>
 
