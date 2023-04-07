@@ -78,15 +78,12 @@ session_start();
 
 
     <table id="output">
-        <legend>You Rolled: </legend>
         <tr>
             <td>
-                <h4>
+                <h4 id="yourolled">
                     <?php
 
                     if (count($_SESSION['results']) > $_SESSION['counter']) {
-                        $gameid = $_SESSION['results'][$_SESSION['counter']]["0"];
-                        $gamelink = "https://store.steampowered.com/app/{$gameid}/";
                         $gameid = $_SESSION['results'][$_SESSION['counter']]["0"];
                         $gamelink = "https://store.steampowered.com/app/{$gameid}/";
                         $imagelink = "https://cdn.cloudflare.steamstatic.com/steam/apps/{$gameid}/library_600x900.jpg";
@@ -96,7 +93,7 @@ session_start();
 
                     if (isset($_POST['reroll'])) {
                         if (count($_SESSION['results']) > $_SESSION['counter']) {
-                            echo $_SESSION['results'][$_SESSION['counter']]["1"];
+                            echo "You Rolled: " . $_SESSION['results'][$_SESSION['counter']]["1"];
                         } else {
                             echo "You Have Reached The End!";
                         }
@@ -189,32 +186,34 @@ session_start();
                 </p>
             </td>
         </tr>
+        <tr>
+            <td>
+                <form method="post" id="update">
+                    <?php
+                        if (count($_SESSION['results']) > $_SESSION['counter']) {
+                            echo "<input type='submit' name='reroll' value='Re-Roll'/>";
+                        } else {
+                            echo "<a href='index.php' id='backtomain'>Return to Home Page</a>";
+                        }
+                    ?>
+                </form>
+                <?php
+                    if (count($_SESSION['results']) > $_SESSION['counter']) {
+                        // Changes the links to the Epic Games Store for the two games that are now only available there.
+                        if ($gameid == "1097150") {
+                            $gamelink = "https://store.epicgames.com/en-US/p/fall-guys";
+                        } else if ($gameid == "252950") {
+                            $gamelink = "https://store.epicgames.com/en-US/p/rocket-league";
+                        }
+                        echo "<a href={$gamelink}><input type='submit' name='redirect' value='Get Game'/></a>";
+
+                    }
+                ?>
+            </td>
+        </tr>
     </table>
 
-    <form method="post" id="update">
-
-        <?php
-        if (count($_SESSION['results']) > $_SESSION['counter']) {
-            echo "<input type='submit' name='reroll' value='Re-Roll'/>";
-        } else {
-            echo "<a href='index.php' id='backtomain'>Return to Home Page</a>";
-        }
-        ?>
-    </form>
-
-
-    <?php
-    if (count($_SESSION['results']) > $_SESSION['counter']) {
-        // Changes the links to the Epic Games Store for the two games that are now only available there.
-        if ($gameid == "1097150") {
-            $gamelink = "https://store.epicgames.com/en-US/p/fall-guys";
-        } else if ($gameid == "252950") {
-            $gamelink = "https://store.epicgames.com/en-US/p/rocket-league";
-        }
-        echo "<a href={$gamelink}><input type='submit' name='redirect' value='Get Game'/></a>";
-
-    }
-    ?>
+    
 
     <?php
     // "The GTA 4 Function"
@@ -227,7 +226,7 @@ session_start();
             $imagelink = "Pictures/Serena.jpg";
         }
         // Display the image
-        echo '<img src="' . $imagelink . '" width="600px" height="100%">';
+        echo '<img src="' . $imagelink . '"  height="80%">';
         $_SESSION['counter']++;
     }
     ?>

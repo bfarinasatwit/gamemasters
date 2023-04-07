@@ -190,20 +190,28 @@ legend{
 }
 /*output.php*/
 #output{
-  width: 80%;
-  margin-left: none;
   display: block;
-}
-#output tr{
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-left: 5%;
+  width: 40%;
+  margin-right: 1rem;
 }
 #output td{
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  padding-top: 1rem;
+  text-align: center;
 }
 #update{
-  display: block;
-  margin-right: 2rem;
+  display: inline;
+  margin-right: 0.5rem;
 }
+#yourolled{
+  font-size: 3rem;
+
+}
+input[name="redirect"]{
+  margin-left: 0.3rem;
+}
+img{
+  margin-top: 2%;
+}
+
 
