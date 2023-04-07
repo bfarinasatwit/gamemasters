@@ -12,7 +12,7 @@ CREATE TABLE games(
 INSERT INTO games (appId, game, Developer, Publisher, genre1,genre2,is_free)
 values (570, 'Dota 2','Valve', 'Valve', 'MOBA', 'Strategy', 1) , (730, 'Counter Strike: Global Offensive', 'Valve', 'Valve', 'Action', 'FPS', 1), (1172470, 'Apex Legends', 'Respawn Entertainment', 'Electronic Arts', 'Action', 'Adventure', 1), 
 (578080, 'PUBG: BATTLEGROUNDS', 'KRAFTON Inc.', 'KRAFTON Inc.', 'Action', 'Adventure', 1), (1063730, 'New World', 'Amazon Games', 'Amazon Games', 'Action', 'MMO', 0), (440, 'Team Fortress 2', 'Valve', 'Valve', 'Action', 'FPS', 1),
-(271590, 'Grand Theft Auto 5', 'Rockstar North', 'Rockstar Games', 'Action', 'Open World', 0),
+(271590, 'Grand Theft Auto V', 'Rockstar North', 'Rockstar Games', 'Action', 'Open World', 0),
 (1599340, 'Lost Ark',' Smilegate RPG', 'Amazon Games', 'Action', 'MMO', 1),
 (550, 'Left 4 Dead 2', 'Valve', 'Valve', 'Multiplayer', 'Zombie', 0),
 (304930, 'Unturned', 'Smartly Dressed Games', 'Smartly Dressed Games', 'Multiplayer', 'Zombie', 1),
@@ -25,7 +25,7 @@ values (570, 'Dota 2','Valve', 'Valve', 'MOBA', 'Strategy', 1) , (730, 'Counter 
 (236390, 'War Thunder', 'Gaijin Entertainment', 'Gaijin Distribution KFT', 'Action', 'Simulation', 1);
 
 INSERT INTO games (appId, game, Developer, Publisher, genre1,genre2,is_free)
-VALUES (340, 'Half-Life 2: Lost Coast', 'Valve', 'Valve', 'Action', 'FPS', 0),
+VALUES (220, 'Half-Life 2', 'Valve', 'Valve', 'Action', 'FPS', 0),
 (945360, 'Among Us', 'Innersloth', 'Innersloth', 'Casual', 'Horror', 0),
 (1085660, 'Destiny 2', 'Bungie', 'Bungie', 'Action', 'Adventure', 1),
 (755790, 'Ring of Elysium', 'Aurora Studio', 'TCH Scarlet Limited', 'Multiplayer', 'FPS', 1),
@@ -33,7 +33,7 @@ VALUES (340, 'Half-Life 2: Lost Coast', 'Valve', 'Valve', 'Action', 'FPS', 0),
 (238960, 'Path of Exile', 'Grinding Gear Games', 'Grinding Gear Games', 'Action', 'RPG', 1),
 (218620, 'Payday 2', 'OVERKILL - a Starbreeze Studio.', 'Starbreeze Publishing AB', 'Action', 'RPG', 0),
 (892970, 'Valheim', 'Iron Gate AB', 'Coffee Stain Publishing', 'Adventure', 'RPG', 0),
-(901583, 'Grand Theft Auto IV: Complete Edition', 'Rockstar North', 'Rockstar Games', 'Open World', 'Action', 0),
+(12210, 'Grand Theft Auto IV: Complete Edition', 'Rockstar North', 'Rockstar Games', 'Open World', 'Action', 0),
 (1091500, 'Cyberpunk 2077', 'CD Projekt Red', 'CD Projekt Red', 'Open World', 'RPG', 0),
 (1097150, 'Fall Guys', 'Mediatonic', 'Mediatonic', 'Casual', 'Sports', 1),
 (242760, 'The Forest', 'Endnight Games Ltd', 'Endnight Games Ltd', 'Survival', 'Simulation', 0),

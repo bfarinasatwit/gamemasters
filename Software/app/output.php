@@ -168,6 +168,27 @@ session_start();
             <td>
                 <p>
                     <?php
+                    if (count($_SESSION['results']) > $_SESSION['counter']) {
+                    $url2 = "https://steamspy.com/api.php?request=appdetails&appid={$gameid}";
+                    $data2 = file_get_contents($url2);
+                    $decoded_data2 = json_decode($data2);
+
+                    $price = $decoded_data2->price;
+                    if ($price != "0") {
+                        $price = $price / 100;
+                    }
+
+                    $a = "Price: $";
+                    $price = $a . $price;
+                    echo $price; }
+                    ?>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    <?php
                     // Get and display description
                     if (count($_SESSION['results']) > $_SESSION['counter']) {
                         $url = "https://store.steampowered.com/api/appdetails?appids={$gameid}&l=english";
@@ -190,39 +211,37 @@ session_start();
             <td>
                 <form method="post" id="update">
                     <?php
-                        if (count($_SESSION['results']) > $_SESSION['counter']) {
-                            echo "<input type='submit' name='reroll' value='Re-Roll'/>";
-                        } else {
-                            echo "<a href='index.php' id='backtomain'>Return to Home Page</a>";
-                        }
+                    if (count($_SESSION['results']) > $_SESSION['counter']) {
+                        echo "<input type='submit' name='reroll' value='Re-Roll'/>";
+                    } else {
+                        echo "<a href='index.php' id='backtomain'>Return to Home Page</a>";
+                    }
                     ?>
                 </form>
                 <?php
-                    if (count($_SESSION['results']) > $_SESSION['counter']) {
-                        // Changes the links to the Epic Games Store for the two games that are now only available there.
-                        if ($gameid == "1097150") {
-                            $gamelink = "https://store.epicgames.com/en-US/p/fall-guys";
-                        } else if ($gameid == "252950") {
-                            $gamelink = "https://store.epicgames.com/en-US/p/rocket-league";
-                        }
-                        echo "<a href={$gamelink}><input type='submit' name='redirect' value='Get Game'/></a>";
-
+                if (count($_SESSION['results']) > $_SESSION['counter']) {
+                    // Changes the links to the Epic Games Store for the two games that are now only available there.
+                    if ($gameid == "1097150") {
+                        $gamelink = "https://store.epicgames.com/en-US/p/fall-guys";
+                    } else if ($gameid == "252950") {
+                        $gamelink = "https://store.epicgames.com/en-US/p/rocket-league";
                     }
+                    echo "<a href={$gamelink}><input type='submit' name='redirect' value='Get Game'/></a>";
+
+                }
                 ?>
             </td>
         </tr>
     </table>
 
-    
+
 
     <?php
-    // "The GTA 4 Function"
+    // Formerly the GTA 4 function, now the Serena function.
+    // Displays the library image for each game.
     if (count($_SESSION['results']) > $_SESSION['counter']) {
-        // GTA 4 images are stored at a different appid than the game itself.
-        if ($gameid == "901583") {
-            $imagelink = "https://cdn.cloudflare.steamstatic.com/steam/apps/12210/library_600x900.jpg";
-        // Serena doesn't have an image, so a modified version of the header is used instead.
-        } else if ($gameid == "272060") {
+        // Serena doesn't have a library image so a modified version of the header is used instead.
+        if ($gameid == "272060") {
             $imagelink = "Pictures/Serena.jpg";
         }
         // Display the image
