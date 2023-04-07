@@ -60,3 +60,7 @@ values (10, 'Counter-Strike', 'Valve', 'Valve', 'Action', 'FPS', 0),
 (386360, 'SMITE', 'Titan Forge Games', 'Hi-Rez Studios', 'Action', 'MOBA', 1),
 (322330, 'Don''t Starve Together', 'Klei Entertainment', 'Klei Entertainment', 'Adventure', 'Simulation', 0),
 (990080, 'Hogwarts Legacy', 'Avalanche Software', 'Warner Bros. Games', 'Adventure', 'RPG', 0);
+
+INSERT INTO games (appId, game, Developer, Publisher, genre1,genre2,is_free)
+values (289070, 'Civilization VI', 'Firaxis Games', '2K', 'Strategy', 'Simulation', 0),
+(203770, 'Crusader Kings II', 'Paradox Interactive', 'Paradox Interactive', 'Strategy', 'Simulation', 1);
