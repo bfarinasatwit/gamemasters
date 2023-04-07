@@ -1,5 +1,6 @@
 <?php
-session_start();
+//start session to use global variables
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -33,9 +34,10 @@ session_start();
     $password = "password";
     $dbname = "GameMasters";
 
-    // Create connection
+    
     if (!isset($_POST['reroll'])) {
 
+        // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
 
         // Check connection
@@ -44,45 +46,39 @@ session_start();
         }
         //echo "Connected successfully";
     
-        //obtain post data from html form
+        //create vars for post data from survey.html
         $genre1 = $_POST["genre1"];
         $genre2 = $_POST["genre2"];
         $is_free = strval($_POST["is_free"]);
+
         //perform query and store in result
         $stmt = $conn->prepare("SELECT * FROM games WHERE (genre1=? OR genre2=?) AND (is_free=?) UNION DISTINCT SELECT * FROM games WHERE (genre1=? OR genre2=?) AND (is_free=?) order by RAND()");
         $stmt->bind_param("ssissi", $genre1, $genre1, $is_free, $genre2, $genre2, $is_free);
         $stmt->execute();
         $result = $stmt->get_result();
 
-        $_SESSION['results'] = $result->fetch_all();
-        $_SESSION['counter'] = 0;
-
         if (!$result) {
             die("Query failed: " . $conn->error);
         }
+
+        //convert msql_result object to global 2d array
+        $_SESSION['results'] = $result->fetch_all();
+
+        //create global counter
+        $_SESSION['counter'] = 0;
+        
     }
     ?>
 
-    <!-- <p>The result is
-        //?php
-        //loop through the result and display the desired information
-        // if ($result->num_rows > 0) {
-        //     while ($row = $result->fetch_assoc()) {
-        //         echo "Game: " . $row["game"] . ", Developer: " . $row["Developer"] . ", Publisher: " . $row["Publisher"] . ", Genre 1: " . $row["genre1"] . ", Genre 2: " . $row["genre2"] . ", Is Free: " . $row["is_free"] . "<br> <br>";
-        //     } 
-        // } else {
-        //     echo "0 results";
-        // } ?>
-    </p> -->
 
-
-
+    <!-- create table to format output -->
     <table id="output">
         <tr>
             <td>
                 <h4 id="yourolled">
                     <?php
 
+                    //create gamelink and imagelink for current video game being displayed
                     if (count($_SESSION['results']) > $_SESSION['counter']) {
                         $gameid = $_SESSION['results'][$_SESSION['counter']]["0"];
                         $gamelink = "https://store.steampowered.com/app/{$gameid}/";
@@ -90,7 +86,7 @@ session_start();
                     }
 
 
-
+                    //output game name
                     if (isset($_POST['reroll'])) {
                         if (count($_SESSION['results']) > $_SESSION['counter']) {
                             echo "You Rolled: " . $_SESSION['results'][$_SESSION['counter']]["1"];
@@ -108,6 +104,7 @@ session_start();
             <td>
                 <p>
                     <?php
+                    //output game developer
                     if (isset($_POST['reroll'])) {
                         if (count($_SESSION['results']) > $_SESSION['counter']) {
                             echo "Developer: " . $_SESSION['results'][$_SESSION['counter']]["2"];
@@ -123,6 +120,7 @@ session_start();
             <td>
                 <p>
                     <?php
+                    //output game publisher
                     if (isset($_POST['reroll'])) {
                         if (count($_SESSION['results']) > $_SESSION['counter']) {
                             echo "Publisher: " . $_SESSION['results'][$_SESSION['counter']]["3"];
@@ -138,6 +136,7 @@ session_start();
             <td>
                 <p>
                     <?php
+                    //output the first genre of the game
                     if (isset($_POST['reroll'])) {
                         if (count($_SESSION['results']) > $_SESSION['counter']) {
                             echo "Genre 1: " . $_SESSION['results'][$_SESSION['counter']]["4"];
@@ -153,6 +152,7 @@ session_start();
             <td>
                 <p>
                     <?php
+                    //output the second genre of the game
                     if (isset($_POST['reroll'])) {
                         if (count($_SESSION['results']) > $_SESSION['counter']) {
                             echo "Genre 2: " . $_SESSION['results'][$_SESSION['counter']]["5"];
@@ -168,6 +168,7 @@ session_start();
             <td>
                 <p>
                     <?php
+                    //output the price of the game
                     if (count($_SESSION['results']) > $_SESSION['counter']) {
                     $url2 = "https://steamspy.com/api.php?request=appdetails&appid={$gameid}";
                     $data2 = file_get_contents($url2);
@@ -212,8 +213,11 @@ session_start();
                 <form method="post" id="update">
                     <?php
                     if (count($_SESSION['results']) > $_SESSION['counter']) {
+                        //display another game
                         echo "<input type='submit' name='reroll' value='Re-Roll'/>";
                     } else {
+                        //if the full query has been looped through,
+                        //give user option to return to home page
                         echo "<a href='index.php' id='backtomain'>Return to Home Page</a>";
                     }
                     ?>
@@ -226,6 +230,7 @@ session_start();
                     } else if ($gameid == "252950") {
                         $gamelink = "https://store.epicgames.com/en-US/p/rocket-league";
                     }
+                    //provide link to store page of the current game
                     echo "<a href={$gamelink}><input type='submit' name='redirect' value='Get Game'/></a>";
 
                 }
@@ -246,6 +251,7 @@ session_start();
         }
         // Display the image
         echo '<img src="' . $imagelink . '"  height="80%">';
+        //increment counter
         $_SESSION['counter']++;
     }
     ?>

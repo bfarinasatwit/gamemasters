@@ -16,7 +16,7 @@
   <link href="Cover%20Template%20for%20Bootstrap_files/cover.css" rel="stylesheet">
 </head>
 <body>
-        <!-- will change action later-->
+        <!-- form to get user input for query -->
     <form method="post" action="output.php" id="survey">
         <fieldset>
             <legend>What are you looking to play?</legend>
@@ -30,6 +30,7 @@
                                     <h4>Select Up To Two Genres: </h4>
                                 </td>
                             </tr>
+                            <!-- create two sets of radio buttons to allow users to choose up to two genres -->
                             <tr>
                                 <td><input type="radio" name="genre1" value="Action" required/></td>
                                 <td><label for="genre1" class="genre">Action</label></td>
@@ -112,6 +113,7 @@
                             <tr>
                                 <td id="move">
                                     <h4>Cost:</h4>
+                                    <!-- choose whether the game will be free or paid -->
                                     <input type="radio" id="free" name="is_free" value="1" required>
                                     <label for="free">Free</label>
                                     <br>
@@ -135,7 +137,7 @@
 
                 
 
-
+            <!-- return user to home page -->
             <a href="index.php" id="backtomain">Return to Home Page</a>
             
         </fieldset>

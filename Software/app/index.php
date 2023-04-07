@@ -29,6 +29,7 @@
 
     <main role="main" class="inner cover">
       <h1 class="cover-heading">WELCOME!</h1>
+      <!-- give description of website -->
       <p class="lead">Game Finder is a web application designed to help gamers like you find new games to play!
         Click on the button below to get started!
       </p>
