@@ -218,17 +218,21 @@ session_start();
                     <?php
                     // Get and display description
                     if (count($_SESSION['results']) > $_SESSION['counter']) {
-                        $url = "https://store.steampowered.com/api/appdetails?appids={$gameid}&l=english";
-                        $data = file_get_contents($url);
-                        $decoded_data = json_decode($data);
+                        try {
+                            $url = "https://store.steampowered.com/api/appdetails?appids={$gameid}&l=english";
+                            $data = file_get_contents($url);
+                            $decoded_data = json_decode($data);
 
-                        // Using short_description right now.
-                        // Can switch back to about_the_game if you want the long version.
-                        $about_the_game = $decoded_data->{"{$gameid}"}->data->short_description;
-                        // Some games have HTML formatting in the descriptions we don't necessarily want.
-                        $about_the_game_text = strip_tags($about_the_game);
+                            // Using short_description right now.
+                            // Can switch back to about_the_game if you want the long version.
+                            $about_the_game = $decoded_data->{"{$gameid}"}->data->short_description;
+                            // Some games have HTML formatting in the descriptions we don't necessarily want.
+                            $about_the_game_text = strip_tags($about_the_game);
 
-                        echo $about_the_game_text;
+                            echo $about_the_game_text;
+                        } catch (Exception $e) {
+                            echo "Description unavailable.";
+                        }
                     }
                     ?>
                 </p>
