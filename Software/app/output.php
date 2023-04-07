@@ -1,6 +1,6 @@
 <?php
 //start session to use global variables
-    session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +34,7 @@
     $password = "password";
     $dbname = "GameMasters";
 
-    
+
     if (!isset($_POST['reroll'])) {
 
         // Create connection
@@ -66,7 +66,7 @@
 
         //create global counter
         $_SESSION['counter'] = 0;
-        
+
     }
     ?>
 
@@ -170,18 +170,44 @@
                     <?php
                     //output the price of the game
                     if (count($_SESSION['results']) > $_SESSION['counter']) {
-                    $url2 = "https://steamspy.com/api.php?request=appdetails&appid={$gameid}";
-                    $data2 = file_get_contents($url2);
-                    $decoded_data2 = json_decode($data2);
+                        $url2 = "https://steamspy.com/api.php?request=appdetails&appid={$gameid}";
+                        $data2 = file_get_contents($url2);
+                        $decoded_data2 = json_decode($data2);
 
-                    $price = $decoded_data2->price;
-                    if ($price != "0") {
-                        $price = $price / 100;
+                        $price = $decoded_data2->price;
+                        if ($price != "0") {
+                            $price = $price / 100;
+                        }
+
+                        $a = "Price: $";
+                        $price = $a . $price;
+                        echo $price;
                     }
-
-                    $a = "Price: $";
-                    $price = $a . $price;
-                    echo $price; }
+                    ?>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    <?php
+                    // Review score
+                    // Uses data pulled earlier for the price
+                    if (count($_SESSION['results']) > $_SESSION['counter']) {
+                        $a = $decoded_data2->positive;
+                        $b = $decoded_data2->negative;
+                        // Get total number of votes
+                        $b = $a + $b;
+                        // Get proportion that are positive
+                        $a = $a / $b;
+                        // Multiply 10 times too large, round, then divide by 10
+                        // Lets us have one decimal place
+                        $a = $a * 1000;
+                        $a = (round($a));
+                        $a = $a / 10;
+                        $b = "% Positive Reviews on Steam";
+                        echo ($a . $b);
+                    }
                     ?>
                 </p>
             </td>
