@@ -208,11 +208,11 @@ session_start();
         // Changes the links to the Epic Games Store for the two games that are now only available there.
         if ($gameid == "1097150") {
             $gamelink = "https://store.epicgames.com/en-US/p/fall-guys";
-        } else if ($gameid == "252950"){
+        } else if ($gameid == "252950") {
             $gamelink = "https://store.epicgames.com/en-US/p/rocket-league";
         }
-            echo "<a href={$gamelink}><input type='submit' name='redirect' value='Get Game'/></a>";
-        
+        echo "<a href={$gamelink}><input type='submit' name='redirect' value='Get Game'/></a>";
+
     }
     ?>
 
@@ -221,11 +221,13 @@ session_start();
     if (count($_SESSION['results']) > $_SESSION['counter']) {
         // GTA 4 images are stored at a different appid than the game itself.
         if ($gameid == "901583") {
-            echo '<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/12210/library_600x900.jpg" width="600px" height="100%">';
-        } else {
-            // any other game
-            echo '<img src="' . $imagelink . '" width="600px" height="100%">';
+            $imagelink = "https://cdn.cloudflare.steamstatic.com/steam/apps/12210/library_600x900.jpg";
+        // Serena doesn't have an image, so a modified version of the header is used instead.
+        } else if ($gameid == "272060") {
+            $imagelink = "Pictures/Serena.jpg";
         }
+        // Display the image
+        echo '<img src="' . $imagelink . '" width="600px" height="100%">';
         $_SESSION['counter']++;
     }
     ?>
