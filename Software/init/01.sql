@@ -63,4 +63,7 @@ values (10, 'Counter-Strike', 'Valve', 'Valve', 'Action', 'FPS', 0),
 
 INSERT INTO games (appId, game, Developer, Publisher, genre1,genre2,is_free)
 values (289070, 'Civilization VI', 'Firaxis Games', '2K', 'Strategy', 'Simulation', 0),
-(203770, 'Crusader Kings II', 'Paradox Interactive', 'Paradox Interactive', 'Strategy', 'Simulation', 1);
+(203770, 'Crusader Kings II', 'Paradox Interactive', 'Paradox Interactive', 'Strategy', 'Simulation', 1),
+(1811260, 'FIFA 23', 'EA Canada', 'Electronic Arts', 'Sports', 'Simulation', 0),
+(766570, 'Russian Fishing 4', 'FishSoft, LLC', 'FishSoft, LLC', 'Open World', 'Simulation', 1),
+(8500, 'EVE Online', 'CCP', 'CCP', 'MMO', 'Simulation', 1);
